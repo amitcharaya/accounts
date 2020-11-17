@@ -5,11 +5,11 @@ from .models import AccountHeads
 
 def home(request):
     heads=AccountHeads.objects.all()
-    return render(request,'index.html',{'heads':heads,})
+    return render(request,'heads/index.html',{'heads':heads,})
 
 def head_detail(request,head_id):
     try:
         head=AccountHeads.objects.get(id=head_id)
     except AccountHeads.DoesNotExist:
         raise Http404("Path not found")
-    return render(request,"Head_Detail.html",{'head':head})
+    return render(request,"heads/Head_Detail.html",{'head':head})
