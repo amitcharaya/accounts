@@ -55,7 +55,7 @@ ROOT_URLCONF = 'account.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['heads'],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),'heads'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,3 +124,4 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT=BASE_DIR
+LOGIN_REDIRECT_URL = '/'
