@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,Http404
 from .models import AccountHeads
 from django.contrib.auth.decorators import login_required
-
+from .forms import CustIdForm
 @login_required
 def home(request):
     heads=AccountHeads.objects.all()
@@ -16,5 +16,6 @@ def head_detail(request,head_id):
         raise Http404("Path not found")
     return render(request,"heads/Head_Detail.html",{'head':head})
 
-def create_cust_id(CreateView):
-    pass
+def create_cust_id(request):
+    form=CustIdForm()
+    return render(request,"heads/custid.html",{'form':form})

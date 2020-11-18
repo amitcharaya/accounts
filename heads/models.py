@@ -45,9 +45,9 @@ class AccountHeads(models.Model):
 
 
 class CustomerID(models.Model):
-    name=models.CharField(max_length=100)
-    father_name=models.CharField(max_length=100,null=True,blank=True)
-    husband_name=models.CharField(max_length=100,null=True,blank=True)
+    name=models.CharField(max_length=26)
+    father_name=models.CharField(max_length=25,null=True,blank=True)
+    husband_name=models.CharField(max_length=25,null=True,blank=True)
     gender_choices=[('M','Male'),('F','Female')]
     gender=models.CharField(max_length=1,choices=gender_choices)
     customer_types=[('I','Individual'),('A','Artificial Person')]
