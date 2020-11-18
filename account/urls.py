@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.home,name='home'),
     path('head/<int:head_id>/',views.head_detail,name='head_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
-
+    path('custid/create/', views.create_cust_id,name='custid_create'),
 ]
 urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

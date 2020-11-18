@@ -2,6 +2,8 @@ from django.db import models
 from datetime import date
 
 class InterestTable(models.Model):
+    class Meta:
+        permissions = [('can_create', 'Can Create'),('can_verify', 'Can Verify')]
     name=models.CharField(max_length=25)
 
     def __str__(self):

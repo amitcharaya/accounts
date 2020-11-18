@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     heads=AccountHeads.objects.all()
 
-    return render(request,'base.html')
+    return render(request,'heads/base.html')
 
 def head_detail(request,head_id):
     try:
@@ -15,3 +15,6 @@ def head_detail(request,head_id):
     except AccountHeads.DoesNotExist:
         raise Http404("Path not found")
     return render(request,"heads/Head_Detail.html",{'head':head})
+
+def create_cust_id(CreateView):
+    pass
